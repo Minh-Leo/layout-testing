@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm: 576px;
+// Small tablets (portrait view)
+$screen-md: 768px;
+// Tablets and small desktops
+$screen-lg: 992px;
+// Large tablets and desktops
+$screen-xl: 1200px;
+// 4k screens
+$screen-xxl: 1400px;
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+// Large devices
+@mixin lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+// 4k devices
+@mixin xxl {
+  @media (min-width: #{$screen-xxl}) {
+    @content;
+  }
+}
+
+$smallest: 0.7em;
+$small: 0.8em;
+
+$main-blue: #286efa;
+$white: #fff;
+
 * {
   margin: 0;
   padding: 0;
@@ -5,5 +55,167 @@
 }
 
 body {
-  background-color: blue;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: $small;
+  background: url('https://unsplash.com/photos/yZygONrUBe8/download?force=true&w=1920');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+.body-container {
+  width: 100%;
+  height: 800px;
+  line-height: 1.7em;
+  display: flex;
+
+  @include md {
+    flex-direction: column;
+    height: 100%;
+  }
+  @include xl {
+    width: 90%;
+  }
+  @include xxl {
+    width: 70%;
+  }
+
+  &_left {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: $white;
+    @include md {
+      width: 100%;
+    }
+  }
+
+  &_right {
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $main-blue;
+    color: #fff;
+    @include md {
+      width: 100%;
+    }
+  }
+}
+
+.steps-display {
+  position: absolute;
+  top: 1em;
+  right: 3em;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  color: $main-blue;
+}
+
+.form-container {
+  width: 50%;
+  height: 60%;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @include lg {
+    width: 100%;
+  }
+
+  & h1,
+  p {
+    margin: 1em 0;
+  }
+}
+
+.form {
+  width: 100%;
+
+  div {
+    position: relative;
+  }
+  input:focus ~ label,
+  input:valid ~ label {
+    top: 0.3em;
+    font-size: $smallest;
+    padding: 0 0.5em;
+    opacity: 1;
+    background: $white;
+  }
+  label {
+    position: absolute;
+    pointer-events: none;
+    color: #999;
+    top: 1.8em;
+    left: 1em;
+    transition: 0.2s ease all;
+  }
+
+  & input,
+  select,
+  button {
+    height: 3em;
+    width: 100%;
+    margin: 1em 0;
+    padding: 0 0.7em;
+    color: #999;
+    border: 1px solid #ededed;
+    border-radius: 3px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  & button {
+    padding: 10px;
+    border: none;
+    background: #ededed;
+    font-size: $small;
+    cursor: pointer;
+
+    &:hover {
+      background: #ccc;
+    }
+  }
+
+  & p {
+    margin: -0.5em 0 1.5em 0;
+    font-size: $smallest;
+  }
+}
+
+.error-message {
+  margin: 0 1em;
+  padding: 0;
+  font-size: $small;
+  color: red;
+}
+
+// Right section
+.heading-container {
+  width: 60%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  @include lg {
+    width: 90%;
+    padding: 2em;
+  }
+
+  & h1 {
+    text-align: center;
+    margin-bottom: 2em;
+  }
 }

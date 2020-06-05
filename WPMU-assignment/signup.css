@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,226 @@
 }
 
 body {
-  background-color: blue;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8em;
+  background: url("https://unsplash.com/photos/yZygONrUBe8/download?force=true&w=1920");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body-container {
+  width: 100%;
+  height: 800px;
+  line-height: 1.7em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .body-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .body-container {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .body-container {
+    width: 70%;
+  }
+}
+
+.body-container_left {
+  width: 65%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .body-container_left {
+    width: 100%;
+  }
+}
+
+.body-container_right {
+  width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #286efa;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .body-container_right {
+    width: 100%;
+  }
+}
+
+.steps-display {
+  position: absolute;
+  top: 1em;
+  right: 3em;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #286efa;
+}
+
+.form-container {
+  width: 50%;
+  height: 60%;
+  padding: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+@media (max-width: 992px) {
+  .form-container {
+    width: 100%;
+  }
+}
+
+.form-container h1,
+.form-container p {
+  margin: 1em 0;
+}
+
+.form {
+  width: 100%;
+}
+
+.form div {
+  position: relative;
+}
+
+.form input:focus ~ label,
+.form input:valid ~ label {
+  top: 0.3em;
+  font-size: 0.7em;
+  padding: 0 0.5em;
+  opacity: 1;
+  background: #fff;
+}
+
+.form label {
+  position: absolute;
+  pointer-events: none;
+  color: #999;
+  top: 1.8em;
+  left: 1em;
+  -webkit-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.form input,
+.form select,
+.form button {
+  height: 3em;
+  width: 100%;
+  margin: 1em 0;
+  padding: 0 0.7em;
+  color: #999;
+  border: 1px solid #ededed;
+  border-radius: 3px;
+}
+
+.form input:focus,
+.form select:focus,
+.form button:focus {
+  outline: none;
+}
+
+.form button {
+  padding: 10px;
+  border: none;
+  background: #ededed;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #ccc;
+}
+
+.form p {
+  margin: -0.5em 0 1.5em 0;
+  font-size: 0.7em;
+}
+
+.error-message {
+  margin: 0 1em;
+  padding: 0;
+  font-size: 0.8em;
+  color: red;
+}
+
+.heading-container {
+  width: 60%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 992px) {
+  .heading-container {
+    width: 90%;
+    padding: 2em;
+  }
+}
+
+.heading-container h1 {
+  text-align: center;
+  margin-bottom: 2em;
 }
 /*# sourceMappingURL=signup.css.map */

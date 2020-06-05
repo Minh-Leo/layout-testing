@@ -7,7 +7,75 @@
     <title>WPMU Login</title>
   </head>
   <body>
-    <h1>hello</h1>
+    <div class="body-container">
+      <div class="body-container_left">
+        <div class="steps-display">Step 1 of 3</div>
+        <div class="form-container">
+          <h1>Let's set up your account</h1>
+          <p>
+            Already have an account?
+            <a class="link" href="https://www.google.com">Sign in</a>
+          </p>
+          <form action="" class="form" id="form-signup">
+            <div>
+              <input
+                class="form_name"
+                name="name"
+                id="name"
+                type="text"
+                required
+              />
+              <label>Your name</label>
+            </div>
+            <div>
+              <input
+                class="form_email"
+                name="email"
+                id="email"
+                type="text"
+                required
+              />
+              <label>Email address</label>
+              <p id="email-error" class="error-message"></p>
+            </div>
+            <select name="type" id="type">
+              <option value="">I would describe my user type as</option>
+              <option value="Developer">Developer</option>
+              <option value="Employer">Employer</option>
+            </select>
+
+            <div>
+              <input
+                class="form_password"
+                name="password"
+                id="password"
+                type="password"
+                required
+              />
+              <label>Password</label>
+            </div>
+            <p id="password-error" class="error-message"></p>
+            <p>Minimum 8 characters</p>
+            <button type="submit">Next</button>
+          </form>
+          <p>
+            By cliking the "Next" button, you agree to creating a free account,
+            and to <a class="link" href="/terms">Terms of Service</a> and
+            <a class="link" href="/policy">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+      <div class="body-container_right">
+        <div class="heading-container">
+          <h1>Dummy Heading</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam fugit
+            ab quod, laboriosam, sed earum harum consequuntur blanditiis omnis
+            corporis adipisci quia veniam libero.
+          </p>
+        </div>
+      </div>
+    </div>
 
     <script src="signup.js"></script>
   </body>
