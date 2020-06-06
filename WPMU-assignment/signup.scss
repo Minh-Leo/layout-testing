@@ -47,6 +47,8 @@ $small: 0.8em;
 
 $main-blue: #286efa;
 $white: #fff;
+$dark-gray: #999;
+$light-gray: #ededed;
 
 * {
   margin: 0;
@@ -56,6 +58,7 @@ $white: #fff;
 
 body {
   height: 100vh;
+  min-height: 800px;
   font-family: 'Roboto', sans-serif;
   font-size: $small;
   background: url('https://unsplash.com/photos/yZygONrUBe8/download?force=true&w=1920');
@@ -66,6 +69,7 @@ body {
   justify-content: center;
 }
 
+// Body layout
 .body-container {
   width: 100%;
   height: 800px;
@@ -109,9 +113,30 @@ body {
 }
 
 .steps-display {
+  font-size: $smallest;
+  font-weight: bold;
   position: absolute;
   top: 1em;
   right: 3em;
+
+  span {
+    color: $dark-gray;
+    font-size: 2em;
+    position: relative;
+    margin: 0 0 0 0.8em;
+
+    &::before {
+      content: '.';
+      color: black;
+      position: absolute;
+      left: -0.5em;
+    }
+    &::after {
+      content: '.';
+      position: absolute;
+      left: 0.5em;
+    }
+  }
 }
 
 .link {
@@ -120,6 +145,7 @@ body {
   color: $main-blue;
 }
 
+// Left section
 .form-container {
   width: 50%;
   height: 60%;
@@ -155,7 +181,7 @@ body {
   label {
     position: absolute;
     pointer-events: none;
-    color: #999;
+    color: $dark-gray;
     top: 1.8em;
     left: 1em;
     transition: 0.2s ease all;
@@ -168,8 +194,8 @@ body {
     width: 100%;
     margin: 1em 0;
     padding: 0 0.7em;
-    color: #999;
-    border: 1px solid #ededed;
+    color: $dark-gray;
+    border: 1px solid $light-gray;
     border-radius: 3px;
 
     &:focus {
@@ -177,10 +203,39 @@ body {
     }
   }
 
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    position: relative;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+
+  .fa {
+    color: black;
+    font-size: 1.1em;
+    font-weight: bold;
+    position: absolute;
+    top: 2em;
+    right: 1em;
+
+    &.fa-eye {
+      font-size: 0.8em;
+      top: 2.8em;
+      right: 1.3em;
+    }
+    &#eye-icon {
+      display: none;
+    }
+  }
+
   & button {
-    padding: 10px;
+    padding: 0.8em;
     border: none;
-    background: #ededed;
+    background: $light-gray;
     font-size: $small;
     cursor: pointer;
 
@@ -189,9 +244,9 @@ body {
     }
   }
 
-  & p {
-    margin: -0.5em 0 1.5em 0;
+  & #password-alert {
     font-size: $smallest;
+    margin-top: -1.5em;
   }
 }
 
@@ -200,6 +255,8 @@ body {
   padding: 0;
   font-size: $small;
   color: red;
+  position: absolute;
+  bottom: -2em;
 }
 
 // Right section

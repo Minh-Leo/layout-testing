@@ -8,6 +8,7 @@
 
 body {
   height: 100vh;
+  min-height: 800px;
   font-family: 'Roboto', sans-serif;
   font-size: 0.8em;
   background: url("https://unsplash.com/photos/yZygONrUBe8/download?force=true&w=1920");
@@ -96,9 +97,31 @@ body {
 }
 
 .steps-display {
+  font-size: 0.7em;
+  font-weight: bold;
   position: absolute;
   top: 1em;
   right: 3em;
+}
+
+.steps-display span {
+  color: #999;
+  font-size: 2em;
+  position: relative;
+  margin: 0 0 0 0.8em;
+}
+
+.steps-display span::before {
+  content: '.';
+  color: black;
+  position: absolute;
+  left: -0.5em;
+}
+
+.steps-display span::after {
+  content: '.';
+  position: absolute;
+  left: 0.5em;
 }
 
 .link {
@@ -179,8 +202,39 @@ body {
   outline: none;
 }
 
+.form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  position: relative;
+}
+
+.form select::-ms-expand {
+  display: none;
+}
+
+.form .fa {
+  color: black;
+  font-size: 1.1em;
+  font-weight: bold;
+  position: absolute;
+  top: 2em;
+  right: 1em;
+}
+
+.form .fa.fa-eye {
+  font-size: 0.8em;
+  top: 2.8em;
+  right: 1.3em;
+}
+
+.form .fa#eye-icon {
+  display: none;
+}
+
 .form button {
-  padding: 10px;
+  padding: 0.8em;
   border: none;
   background: #ededed;
   font-size: 0.8em;
@@ -191,9 +245,9 @@ body {
   background: #ccc;
 }
 
-.form p {
-  margin: -0.5em 0 1.5em 0;
+.form #password-alert {
   font-size: 0.7em;
+  margin-top: -1.5em;
 }
 
 .error-message {
@@ -201,6 +255,8 @@ body {
   padding: 0;
   font-size: 0.8em;
   color: red;
+  position: absolute;
+  bottom: -2em;
 }
 
 .heading-container {

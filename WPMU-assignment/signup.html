@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="signup.css" />
     <title>WPMU Login</title>
   </head>
   <body>
     <div class="body-container">
       <div class="body-container_left">
-        <div class="steps-display">Step 1 of 3</div>
+        <div class="steps-display">Step 1 of 3 <span>.</span></div>
         <div class="form-container">
           <h1>Let's set up your account</h1>
           <p>
@@ -36,14 +42,17 @@
                 required
               />
               <label>Email address</label>
+              <i class="fa fa-eye" id="eye-icon"></i>
               <p id="email-error" class="error-message"></p>
             </div>
-            <select name="type" id="type">
-              <option value="">I would describe my user type as</option>
-              <option value="Developer">Developer</option>
-              <option value="Employer">Employer</option>
-            </select>
-
+            <div>
+              <select name="type" id="type">
+                <option value="">I would describe my user type as</option>
+                <option value="Developer">Developer</option>
+                <option value="Employer">Employer</option>
+              </select>
+              <i class="fa fa-angle-down"></i>
+            </div>
             <div>
               <input
                 class="form_password"
@@ -53,9 +62,11 @@
                 required
               />
               <label>Password</label>
+              <i class="fa fa-eye"></i>
+              <p id="password-error" class="error-message"></p>
+              <p id="password-alert">Minimum 8 characters</p>
             </div>
-            <p id="password-error" class="error-message"></p>
-            <p>Minimum 8 characters</p>
+
             <button type="submit">Next</button>
           </form>
           <p>

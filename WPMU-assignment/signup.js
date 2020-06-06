@@ -4,6 +4,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const emailError = document.getElementById('email-error');
 const passwordError = document.getElementById('password-error');
+const eyeIcon = document.getElementById('eye-icon');
 
 formSignup.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -13,8 +14,6 @@ formSignup.addEventListener('submit', (event) => {
     clearError(passwordError, password);
   }, 5000);
 });
-
-email.addEventListener('onchange', () => clearError(emailError, email));
 
 const formValidator = () => {
   if (!name.value || !email.value || !password.value) {
@@ -41,10 +40,17 @@ const clearError = (errorElement, element) => {
   errorElement.innerText = null;
   element.nextElementSibling.style.color = '#999';
   element.style.border = '1px solid #ededed';
+  eyeIcon.style.display = 'none';
+  document.getElementById('password-alert').style.display = 'block';
 };
 
 const displayError = (errorElement, element, message) => {
   errorElement.innerText = message;
   element.nextElementSibling.style.color = 'red';
   element.style.border = '1px solid red';
+  eyeIcon.style.display = 'block';
+  if (element === password) {
+    errorElement.style = 'position: relative; top: -1.2em; margin: 0;';
+    document.getElementById('password-alert').style.display = 'none';
+  }
 };
