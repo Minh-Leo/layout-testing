@@ -9,11 +9,15 @@ const eyeIcon = document.getElementById('eye-icon');
 formSignup.addEventListener('submit', (event) => {
   event.preventDefault();
   formValidator();
-  setTimeout(() => {
-    clearError(emailError, email);
-    clearError(passwordError, password);
-  }, 5000);
+  if (haveErrors) {
+    setTimeout(() => {
+      clearError(emailError, email);
+      clearError(passwordError, password);
+    }, 5000);
+  }
 });
+
+let haveErrors = false;
 
 const formValidator = () => {
   if (!name.value || !email.value || !password.value) {
@@ -37,6 +41,7 @@ const emailValidator = (email) => {
 };
 
 const clearError = (errorElement, element) => {
+  haveErrors = false;
   errorElement.innerText = null;
   element.nextElementSibling.style.color = '#999';
   element.style.border = '1px solid #ededed';
@@ -45,6 +50,7 @@ const clearError = (errorElement, element) => {
 };
 
 const displayError = (errorElement, element, message) => {
+  haveErrors = true;
   errorElement.innerText = message;
   element.nextElementSibling.style.color = 'red';
   element.style.border = '1px solid red';
